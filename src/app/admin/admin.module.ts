@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { MainComponent } from './main/main.component';
+import { UserDataPresenterComponent } from './components/user-data-presenter/user-data-presenter.component';
 
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, UserDataPresenterComponent],
   imports: [
     CommonModule,
     AdminRoutingModule

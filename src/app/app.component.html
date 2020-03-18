@@ -1,5 +1,7 @@
-<nav>
+<nav class="nav-tab">
   <a routerLink="">Landing Page</a>
   <a routerLink="info">Info Page</a>
+  <a routerLink="admin">Admin</a>
+  <a [routerLink]="['auth', 'logout']">Logout</a>
 </nav>
 <router-outlet></router-outlet>

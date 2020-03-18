@@ -1,0 +1,8 @@
+.nav-tab {
+  display: flex;
+  flex-direction: row;
+
+  [routerLink] {
+    flex-grow: 1;
+  }
+}
