@@ -1,1 +1,5 @@
-<p>landing-page works!</p>
+<div *ngFor="let post of post$ | async">
+  <h2>{{post.title}}</h2>
+  <p>{{post.body}}</p>
+  <a [routerLink]="['message', post.id]">Zobacz szczegóły</a>
+</div>

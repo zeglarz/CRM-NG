@@ -1,0 +1,11 @@
+.validation-message {
+  font-size: small;
+
+  .error {
+    color: red;
+  }
+
+  .success {
+    color: grey;
+  }
+}

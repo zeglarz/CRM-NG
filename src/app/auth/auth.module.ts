@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {AuthRoutingModule} from './auth-routing.module';
-import {LoginComponent} from './login/login.component';
+import { AuthRoutingModule } from './auth-routing.module';
+import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 
@@ -12,8 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ]
 })
-export class AuthModule {
-}
+export class AuthModule { }

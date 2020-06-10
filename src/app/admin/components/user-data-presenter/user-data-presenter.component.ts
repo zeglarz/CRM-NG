@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UserData} from '../../../interfaces/user-data';
-import {UserDataService} from '../../../services/user-data.service';
 
 @Component({
   selector: 'app-user-data-presenter',
@@ -8,16 +7,18 @@ import {UserDataService} from '../../../services/user-data.service';
   styleUrls: ['./user-data-presenter.component.scss']
 })
 export class UserDataPresenterComponent implements OnInit {
+
   @Input() public userData: UserData;
+  @Output() public clearUser: EventEmitter<void> = new EventEmitter<void>();
+  @Input() public role = 'user';
 
-  constructor(private userDataService: UserDataService) {
+  constructor() {
   }
 
-  public get userData: UserData {
-    return this.userDataService.userData;
+  public ngOnInit(): void {
   }
 
-  ngOnInit(): void {
+  public clearUserDataHandler(): void {
+    this.clearUser.emit();
   }
-
 }

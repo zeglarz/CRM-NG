@@ -1,0 +1,32 @@
+<form [formGroup]="formGroup" class="pure-form">
+  <fieldset>
+    <input type="text" placeholder="Imię" [formControlName]="formFields.firstName">
+    <div class="validation-message" *ngIf="!formGroup.get(formFields.firstName).pristine">
+      <span class="error" *ngIf="getError(formFields.firstName, 'minlength'); else someRef">Za krótkie imię</span>
+      <ng-template #someRef>
+        <span class="sucess">Prawidłowe imię</span>
+      </ng-template>
+    </div>
+  </fieldset>
+  <fieldset>
+    <input type="text" placeholder="Nazwisko" [formControlName]="formFields.lastName">
+  </fieldset>
+  <fieldset>
+    <input type="email" placeholder="Email" [formControlName]="formFields.email">
+  </fieldset>
+
+  <div [formArrayName]="formFields.phones">
+    <h2>Numery telefonu</h2>
+    <fieldset *ngFor="let phone of phonesArray.controls; let index = index;" [formGroupName]="index">
+      <input type="text" placeholder="Nr telefony" [formControlName]="[formFields.phoneNumber]">
+      <select [formControlName]="formFields.phoneType">
+        <option *ngFor="let item of phonesTypes" [value]="item.value">{{item.label}}</option>
+      </select>
+      <button (click)="removePhone(index)" class="pure-button">-</button>
+    </fieldset>
+    <button (click)="addPhone()" class="pure-button">Dodaj nr telefonu</button>
+  </div>
+</form>
+<button [disabled]="formGroup.invalid || formGroup.pristine" class="pure-button pure-button-primary"
+        (click)="saveCustomer()">Zapisz
+</button>

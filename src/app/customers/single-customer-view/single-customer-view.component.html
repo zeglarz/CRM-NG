@@ -1,0 +1,5 @@
+<div>
+  <h1>{{customerFullName$ | async}}</h1>
+  <p>{{email$ | async}}</p>
+  <a [routerLink]="['/', 'admin', 'add-customer']" class="pure-button">Edytuj</a>
+</div>

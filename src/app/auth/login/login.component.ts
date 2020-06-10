@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private userDataService: UserDataService, private formBuilder: FormBuilder, private router: Router) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.authForm = this.formBuilder.group({
       login: [''],
       password: ['']
@@ -22,13 +22,12 @@ export class LoginComponent implements OnInit {
   }
 
   submit(): void {
-// @TODO: autentykacja użytkownika
+    // TODO: autentykacja użytkownika
     console.log(this.authForm.getRawValue());
     this.userDataService.setUserData({
       name: 'John',
-      email: 'john.smith@foo.pl'
+      email: 'jonh.smith@foo.pl',
     });
-    this.router.navigate(['/', 'auth']);
+    this.router.navigate(['/', 'admin']);
   }
-
 }

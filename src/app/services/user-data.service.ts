@@ -1,23 +1,21 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {UserData} from '../interfaces/user-data';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserDataService {
-  private userData: UserData;
+  public userData: UserData;
 
-  constructor() {
-  }
+  constructor() { }
 
   public get isAuthenticated(): boolean {
-    return this.userData !== undefined;
+    // return this.userData !== undefined;
+    //TODO: Temporary.
+    return true;
   }
 
   public setUserData(userData: UserData): void {
     this.userData = userData;
   }
-
   public logout(): void {
     this.userData = undefined;
   }

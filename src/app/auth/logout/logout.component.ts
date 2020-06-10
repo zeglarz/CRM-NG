@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {UserDataService} from '../../services/user-data.service';
+import { Component, OnInit } from '@angular/core';
+import {UserDataService} from "../../services/user-data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-logout',
@@ -7,12 +8,11 @@ import {UserDataService} from '../../services/user-data.service';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(userDataService: UserDataService) {
-  }
+  constructor(private userDataService: UserDataService, private router: Router) { }
 
   ngOnInit(): void {
     this.userDataService.logout();
-    this.router.navigate(['logout']);
+    this.router.navigate(['auth', 'login']);
   }
 
 }

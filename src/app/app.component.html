@@ -1,7 +1,10 @@
-<nav class="nav-tab">
-  <a routerLink="">Landing Page</a>
-  <a routerLink="info">Info Page</a>
-  <a routerLink="admin">Admin</a>
-  <a [routerLink]="['auth', 'logout']">Logout</a>
+<nav class="pure-menu pure-menu-horizontal">
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a routerLink="" class="pure-menu-link">Landing page</a></li>
+    <li class="pure-menu-item"><a routerLink="info" class="pure-menu-link">Info</a></li>
+    <li class="pure-menu-item"><a routerLink="admin" class="pure-menu-link">Admin</a></li>
+    <li class="pure-menu-item"><a routerLink="customers" class="pure-menu-link">Customers</a></li>
+    <li class="pure-menu-item"><a [routerLink]="['auth', 'logout']" class="pure-menu-link">Logout</a></li>
+  </ul>
 </nav>
 <router-outlet></router-outlet>

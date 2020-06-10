@@ -1,0 +1,5 @@
+<h1>Klienci naszej firmy</h1>
+<div *ngFor="let customer of customers$ | async">
+  <p>{{customer.firstName}} {{customer.lastName}}</p>
+  <a [routerLink]="[customer.id]" class="pure-button pure-button-primary">Dane szczegółowe</a>
+</div>

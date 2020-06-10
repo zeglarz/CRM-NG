@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserDataService} from '../../services/user-data.service';
+import {UserData} from '../../interfaces/user-data';
 
 @Component({
   selector: 'app-main',
@@ -7,12 +8,18 @@ import {UserDataService} from '../../services/user-data.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
+  role: string;
   constructor(private userDataService: UserDataService) {
   }
 
-  ngOnInit(): void {
-    console.log(this.userDataService.setUserData());
+  public get userData(): UserData {
+    return this.userDataService.userData;
   }
 
+  public ngOnInit(): void {
+  }
+
+  public clearUserHandler() {
+    console.log('User should be cleared');
+  }
 }
